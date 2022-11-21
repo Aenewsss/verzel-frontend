@@ -1,0 +1,45 @@
+:root {
+    --green: #6AB026;
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.box-shadow {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.mw-50 {
+    max-width: 50%;
+}
+
+.border-green {
+    border-color: var(--green);
+}
+
+.bg-opacity {background-color: rgba(0, 0, 0, 0.3);}
+
+.bg-cards {
+    width: 300px;
+    height: 200px;
+    background-position: center;
+    background-size: cover !important;
+}
+
+.bg-card-1 { background: url('https://img.freepik.com/free-photo/row-new-cars-port_335224-806.jpg?w=1060&t=st=1669024863~exp=1669025463~hmac=dbbc9e2fac1a4b727e3aafbe7ee9cf2f04c51644b93720fa0d940bc5e8f1f610'); }
+.bg-card-2 { background: url('https://img.freepik.com/free-photo/stylish-elegant-woman-car-salon_1157-20980.jpg?w=996&t=st=1669025369~exp=1669025969~hmac=744f2f88274047b4f972eb351f8eb4c020bfecf393a56266ae1e1697aa9d98b5'); }
+.bg-card-3 { background: url('https://img.freepik.com/free-photo/car-mechanic-using-laptop-while-running-engine-diagnostic-repair-shop_637285-11553.jpg?w=996&t=st=1669025385~exp=1669025985~hmac=71a22ded4a09a2833984ea64cbfb8dee96ab059fd6a36ae4503c5e080c77fcb5'); }
+.bg-card-4 { background: url('https://img.freepik.com/free-photo/two-bearded-mechanics-specialist-repairs-car-engine-which-is-raised-hydraulic-lift-garage-service-station_613910-19619.jpg?w=826&t=st=1669025409~exp=1669026009~hmac=0b4f6f2251ad9d84f84ff076f9d998dc852088b40730f6576a7ce065b423b1fa'); }
+
+.scale {
+    transition: .4s ease;
+
+    &:hover {
+        transform: scale(1.04);
+    }
+}
