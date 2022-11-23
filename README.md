@@ -1,47 +1,51 @@
-# Getting Started with Create React App
+## Primeira página (Catálogo)
+- Assim que a página é carregada, o front executa uma requisição get na api, através de um useEffect, para assim resgatar os dados de todos os carros cadastrados no bando de dados(MongoDB);
+- Após o sucesso da resposta à requisição feita, são listados, em cards, todos os carros cadastrados em ordem crescente de acordo com o preço;
+- Ao lado esquerdo podemos verificar um filtro sofisticado, criado sem ajuda de bibliotecas externas, para facilitar a busca dos veículos;
+- Navbar contendo botão de login para entrar no admin;
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Segunda página (Carro)
+- Ao clicar em um card na primeira página, somos redirecionados para a página do carro específico;
+- Tela adicionada para dar mais vida ao sistema;
 
-## Available Scripts
+## Terceira página (Login)
 
-In the project directory, you can run:
+- Tela contendo formulário de login, uma imagem ao lado para melhorar a visualização e navbar no topo que permite o redirecionamento para a tela inicial, caso clique na logo da empresa;
+- Formulário de login simples resgatando usuário(verzel) e senha(verzelaena100) através de useStates;
+- Existe apenas um usuário com acesso para garantir a segurança (o usuário foi citado no ponto anterior);
+- Assim que clicamos para logar, uma requisição POST é enviada para o back, contendo username e password. Caso o usuário não seja encontrado, uma mensagem de erro aparecerá na parte inferior ao formulário. Caso o usuário certo seja logado, um token jwt, o qual vem da api, é setado no local storage;
+- Após logar, partimos para a quarta página;
 
-### `npm start`
+## Quarta página (Admin)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Página contendo os quatro cards das principais operações do nosso admin (CRUD cards);
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Quinta página (Read - Visualização dos cadastrados)
 
-### `npm test`
+- A primeira função dessa página é listar todos os carros cadastrados no banco através de uma requisição GET, desde que o usuário atual esteja devidamente autenticado;
+- Aqui apenas visualizaremos os carros;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Sexta página (Create - Cadastro)
 
-### `npm run build`
+- Formulário de preenchimento dos dados obrigatórios;
+- Adicionar campos de texto e números é fácil, mas a parte legal vem na hora de adicionar uma imagem;
+- Assim que clicamos em nova imagem, a imagem escolhida é lançada direto para um bucket S3 criado diretamente na minha conta aws e com um usuário IAM específico da verzel. Dessa forma não deixo o projeto pesado com várias imagens e acelero até mesmo o carregamento de página;
+- Caso todos os campos estejam devidamente preenchidos, o body é enviado para a api através de um POST e somos redirecionados para a página de ADMIN;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Sétima página (Update - Atualizar dados)
+- Formulário de preenchimento dos dados obrigatórios;
+- Assim que um carro é selecionado, todos os campos do formulário são preenchidos de acordo com as informações do veículo escolhido. Facilitando assim o preenchimento dos dados;
+- Caso todos os campos estejam devidamente preenchidos, o body é enviado para a api através de um PUT e somos redirecionados para a página de ADMIN;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Oitava página (Delete - Remover carro)
+- Apenas um select para selecionar o carro que deseja excluir;
+- Esse select é preenchido de acordo com os dados quem vem do banco de todos os carros cadastrados;
+- Após selecionar um carro, uma função é chamada com o ID daquele carro específico e após isso ela chama a rota da api responsável por buscar a informação daquele determinado veículo;
+- Assim que a api retorna os dados, aparece na tela as informações básicas daquele veículo para uma melhor Visualização e entendimento do objeto a ser excluído;
+- Clicando em excluir somos redirecionados para a página do ADMIN;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# verzel-frontend
+# OBSERVAÇÕES
+- Site totalmente responsivo utilizando bootstrap;
+- Rotas autenticadas tanto no front quanto no back;
+- Usuário e senha para login: verzel verzelaena100;
+- Projeto hospedado na Vercel: https://verzelcars.vercel.app/;
