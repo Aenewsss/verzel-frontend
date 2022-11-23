@@ -1,5 +1,4 @@
 import axios from 'axios';
 
-const Api = axios.create({ baseURL: process.env.API_URL || 'http://localhost:2002' });
-console.log(process.env.API_URL)
+const Api = axios.create({ baseURL: process.env.API_URL || 'http://18.230.130.179:2002' });
 export default Api;
