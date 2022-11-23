@@ -50,3 +50,9 @@
 - Usuário e senha para login: verzel verzelaena100;
 - Projeto hospedado na Vercel: https://verzelcars.vercel.app/;
 - Caso queira rodar localmente é só digitar npm start no seu terminal :)
+- Variáveis de ambiente: 
+    REACT_APP_S3_BUCKET="verzel"
+    REACT_APP_REGION="sa-east-1"
+    REACT_APP_ACCESS_KEY="AKIA2WI5EVDLQFHU3YBP"
+    REACT_APP_SECRET_ACCESS_KEY="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"
+    API_URL="https://verzel-backend.herokuapp.com"
