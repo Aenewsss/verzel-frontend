@@ -26,7 +26,7 @@ export const LoginForm = () => {
         try {
             const logged = await AdminService.login(user);
             navigate('/admin')
-            location.reload()
+            window.location.reload();
         } catch (error) {
             setError(true);
         }

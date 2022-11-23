@@ -49,3 +49,4 @@
 - Rotas autenticadas tanto no front quanto no back;
 - Usuário e senha para login: verzel verzelaena100;
 - Projeto hospedado na Vercel: https://verzelcars.vercel.app/;
+- Caso queira rodar localmente é só digitar npm start no seu terminal :)
