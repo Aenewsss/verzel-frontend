@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AdminService } from "../../services/admin";
 import { ICar } from "../../types/car.interface";
 import { UploadImageToS3 } from "../../utils/functionS3";
@@ -6,8 +7,11 @@ import { CancelButton } from "./CancelButton";
 
 export const FormNewCar = () => {
 
-    const [newCar, setNewCar] = useState<ICar>({_id: '', brand: '', image: '', model: '', name: ''});
+    const [newCar, setNewCar] = useState<ICar>({ _id: '', brand: '', image: '', model: '', name: '', price: 0 });
     const [selectedFile, setSelectedFile] = useState<File>();
+    const [error, setError] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleChange = (e: any) => {
         setNewCar(newCar => ({
@@ -26,9 +30,10 @@ export const FormNewCar = () => {
         newCar.image = urlImage!;
 
         try {
-            const addedCar = await AdminService
+            const addedCar = await AdminService.create(newCar);
+            navigate('/admin');
         } catch (error) {
-            
+            setError(true);
         }
     };
 
@@ -45,6 +50,10 @@ export const FormNewCar = () => {
             <div className="mb-3">
                 <label htmlFor="">Modelo</label>
                 <input onChange={handleChange} id="model" required type="text" className="form-control" />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="">Preço</label>
+                <input onChange={handleChange} id="price" required type="number" className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="">Foto</label>
