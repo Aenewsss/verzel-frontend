@@ -11,7 +11,7 @@ export const Car = () => {
         <>
             <Navbar />
             <AboutCar id={id} />
-            <Footer />
+            <Footer /> 
         </>
     )
 }
