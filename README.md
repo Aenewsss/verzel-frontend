@@ -45,6 +45,7 @@
 - Clicando em excluir somos redirecionados para a página do ADMIN;
 
 # OBSERVAÇÕES
+- Caso os carros não carreguem de primeira, aguarde um pouco a conexão com o Mongo e tente dar CTRL + F5 para recarregar a página;
 - Site totalmente responsivo utilizando bootstrap;
 - Rotas autenticadas tanto no front quanto no back;
 - Usuário e senha para login: verzel verzelaena100;

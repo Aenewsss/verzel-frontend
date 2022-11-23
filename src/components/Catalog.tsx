@@ -44,7 +44,7 @@ export const Catalog: React.FC<any> =
                                             </div>
                                             <span className="fs-4 fw-normal text-capitalize mt-2">
                                                 {car.brand}
-                                                <span className="fs-4"> {car.name}</span>
+                                                <span className="fs-4 text-capitalize"> {car.name}</span>
                                             </span>
                                             <span>{car.model}</span>
                                             <div className="d-flex justify-content-around align-items-center">

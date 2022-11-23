@@ -30,7 +30,7 @@ export const CardsCars = () => {
                         <div key={car._id.substring(0, 8)} className="col-md-4 mt-5 mb-5 pt-5 p-0 ms-2 me-2 bg-cards">
                             <div className="scale box-shadow  d-flex flex-column align-items-center justify-content-end btn btn-default border-green">
                                 <img width={300} height={200} src={car.image} alt="car.image" />
-                                <h3 className="bg-opacity text-white fw-normal text-capitalize mt-2">{car.brand} - <span className="fs-4">{car.name} - {car.price}</span> </h3>
+                                <h3 className="text-dark fw-normal text-capitalize mt-2">{car.brand} - <span className="fs-4">{car.name} - {car.price}</span> </h3>
                             </div>
                         </div>
                     )
