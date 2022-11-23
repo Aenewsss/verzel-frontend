@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IUser } from "../types/user.interface";
 import { AdminService } from "../services/admin";
-import { Admin } from "../pages/Admin/Admin";
 
 export const LoginForm = () => {
 
@@ -26,7 +25,8 @@ export const LoginForm = () => {
 
         try {
             const logged = await AdminService.login(user);
-            return <Admin />
+            navigate('/admin')
+            location.reload()
         } catch (error) {
             setError(true);
         }
